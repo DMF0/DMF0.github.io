@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" demote-non-dropping-particle="never" initialize-with=". " names-delimiter=", " page-range-format="expanded" version="1.0">
   <info>
-    <title>APA MOD v2</title>
+    <title>APA MOD v3</title>
     <title-short>APA MDk</title-short>
     <id></id>
     <author>
@@ -2007,13 +2007,13 @@
       <choose>
         <if match="any" variable="archive archive-place container-title DOI number publisher references URL">
           <text macro="bibliography-tag"/>
-          <text value="&#10;"/>
+          <text value="&lt;"/>
           <text macro="bibliography" prefix="&#160;&#160;"/>
         </if>
         <else-if match="any" type="interview personal_communication"/>
         <else>
           <text macro="bibliography-tag"/>
-          <text value="&#10;"/>
+          <text value="&lt;;"/>
           <text macro="bibliography" prefix="&#160;&#160;"/>
         </else>
       </choose>
