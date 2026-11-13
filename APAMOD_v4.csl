@@ -2007,14 +2007,14 @@
       <choose>
         <if match="any" variable="archive archive-place container-title DOI number publisher references URL">
           <text macro="bibliography-tag"/>
-          <text value="&#x2028;"/>
-          <text macro="bibliography"/>
+          <text value="&#10;"/>
+          <text macro="bibliography" prefix="&#160&#160"/>
         </if>
         <else-if match="any" type="interview personal_communication"/>
         <else>
           <text macro="bibliography-tag"/>
-          <text value="&#x2028;"/>
-          <text macro="bibliography"/>
+          <text value="&#10;"/>
+          <text macro="bibliography" prefix="&#160&#160"/>
         </else>
       </choose>
     </layout>
