@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" demote-non-dropping-particle="never" initialize-with=". " names-delimiter=", " page-range-format="expanded" version="1.0">
   <info>
-    <title>APA MOD v9</title>
+    <title>APA MOD v9.2</title>
     <title-short>APA MDk</title-short>
     <id></id>
     <author>
@@ -1970,28 +1970,21 @@
     </group>
   </macro>
   <macro name="bibliography">
-    <choose>
-      <if match="any" type="bill hearing legal_case legislation regulation treaty">
-        <text macro="legal-reference" suffix="."/>
-      </if>
-      <else>
-        <group delimiter=". " suffix=".">
-          <text macro="author-and-contributors"/>
-          <text macro="date"/>
-          <text macro="title-and-descriptions"/>
-          <text macro="source"/>
-        </group>
-      </else>
-    </choose>
-  </macro>
-  <macro name="bibliography-link">
     <group delimiter=" ">
-      <text macro="source-DOI-URL"/>
       <choose>
         <if match="any" type="bill hearing legal_case legislation regulation treaty">
+          <text macro="legal-reference" suffix="."/>
+          <text macro="source-DOI-URL"/>
           <text variable="references"/>
-        </if>
+        </if>   
         <else>
+          <group delimiter=". " suffix=".">
+            <text macro="author-and-contributors"/>
+            <text macro="date"/>
+            <text macro="title-and-descriptions"/>
+            <text macro="source"/>
+          </group>
+          <text macro="source-DOI-URL"/>
           <text macro="publication-history"/>
         </else>
       </choose>
@@ -2015,13 +2008,11 @@
         <if match="any" variable="archive archive-place container-title DOI number publisher references URL">
           <text display="block" macro="bibliography-tag"/>
           <text display="block" macro="bibliography" prefix="&#160;&#160;"/>
-          <text display="block" macro="bibliography-link" prefix="&#160;&#160;"/>
         </if>
         <else-if match="any" type="interview personal_communication"/>
         <else>
           <text display="block" macro="bibliography-tag"/>
           <text display="block" macro="bibliography" prefix="&#160;&#160;"/>
-          <text display="block" macro="bibliography-link" prefix="&#160;&#160;"/>
         </else>
       </choose>
     </layout>
